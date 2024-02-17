@@ -6,7 +6,7 @@ const Card: React.FC<{
 }> = (props) => {
   return (
     <div
-      className="card rounded-md flex flex-col items-center gap-2 text-center shadow-md p-8 hover:shadow-lg dark:hover:transiton dark:bg-slate-900 dark:text-white dark:hover:bg-slate-600 dark:hover:transition "
+      className=" rounded-md flex flex-col items-center gap-2 text-center shadow-md p-8 hover:shadow-lg dark:hover:transiton dark:bg-slate-900 dark:text-white dark:hover:bg-slate-600 dark:hover:transition "
       //   key={props.data.codePoints}
     >
       <span className="text-6xl ">{props.data.emoji}</span>

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { EmojisContext } from "../context/emoji-context";
 
 const Navigation = () => {

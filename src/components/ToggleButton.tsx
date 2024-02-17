@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { EmojisContext } from "../context/emoji-context";
 
 const ToggleButton = () => {
