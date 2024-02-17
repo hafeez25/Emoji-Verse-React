@@ -23,6 +23,7 @@ export { EmojisContext };
 
 const EmojiContextProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const [emojis, setEmojis] = useState<data.Emoji[]>(data.all());
+  const [theme, setTheme] = useState<string>("light");
   const searchEmojiHandler = (keyword: string) => {
     if (keyword !== null) {
       const term = keyword.toUpperCase().trim();
@@ -51,14 +52,22 @@ const EmojiContextProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
     console.log(category);
   };
 
-  const changeThemeHandler = () => {};
+  const changeThemeHandler = () => {
+    if (contextValue.theme == "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+    localStorage.setItem("theme", theme);
+    console.log(contextValue.theme);
+  };
 
   const contextValue: EmojiContextObj = {
     emojis: emojis,
     categories: Object.keys(data.arrange()),
     searchEmoji: searchEmojiHandler,
     filterCategory: filterCategoryHandler,
-    theme: "light",
+    theme: theme,
     changeTheme: changeThemeHandler,
   };
   return (

@@ -1,12 +1,23 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Card from "../components/Card";
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import { EmojisContext } from "../context/emoji-context";
 const Home = () => {
   const emojisCtx = useContext(EmojisContext);
+  useEffect(() => {
+    const isTheme = localStorage.getItem("theme");
+    console.log(isTheme);
+    emojisCtx.changeTheme();
+  }, []);
   return (
-    <div>
+    <div
+      className={` min-w-full min-h-screen	 ${
+        emojisCtx.theme
+      } m-auto dark:bg-black  ${
+        emojisCtx.theme === "dark" ? "bg-black" : "bg-white"
+      }`}
+    >
       <Header />
       <Navigation />
 
