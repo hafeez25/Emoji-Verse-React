@@ -23,7 +23,17 @@ export { EmojisContext };
 
 const EmojiContextProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const [emojis, setEmojis] = useState<data.Emoji[]>(data.all());
-  const searchEmojiHandler = (keyword: string) => {};
+  const searchEmojiHandler = (keyword: string) => {
+    if (keyword !== null) {
+      const term = keyword.toUpperCase().trim();
+
+      const filteredData = data
+        .all()
+        .filter((d) => d.name.toUpperCase().includes(term));
+
+      setEmojis(filteredData);
+    }
+  };
   const filterCategoryHandler = (category: string) => {
     window.scrollTo({
       top: 200,
