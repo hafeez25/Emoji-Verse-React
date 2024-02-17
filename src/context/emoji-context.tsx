@@ -13,8 +13,8 @@ type EmojiContextObj = {
 const EmojisContext = React.createContext<EmojiContextObj>({
   emojis: [],
   categories: [],
-  searchEmoji: (keyword: string) => {},
-  filterCategory: (category: string) => {},
+  searchEmoji: () => {},
+  filterCategory: () => {},
   theme: "light",
   changeTheme: () => {},
 });
