@@ -1,12 +1,13 @@
-import { useState } from "react";
-import "./App.css";
+import React from "react";
+import * as data from "emoji-api";
+import Home from "./pages/Home";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <h1 className="text-4xl text-emerald-300">Tialined added</h1>
-    </>
+    <div>
+      <Home />
+    </div>
   );
-}
+};
 
 export default App;
