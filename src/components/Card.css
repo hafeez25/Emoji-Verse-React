@@ -1,0 +1,63 @@
+.card {
+  margin: 0.5rem;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px rgb(221, 221, 221);
+  border-radius: 5px;
+  gap: 1rem;
+
+  animation: fadeInAnimation ease-in-out 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.emoji {
+  font-size: 3.5rem;
+  animation-name: emojiAnimation;
+  animation-duration: 100ms;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-timing-function: ease;
+}
+
+@keyframes emojiAnimation {
+  0% {
+    font-size: 0rem;
+  }
+  100% {
+    font-size: 3.5rem;
+  }
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(41, 177, 170);
+  text-transform: capitalize;
+  padding: 0.2rem;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgb(201, 201, 201);
+  transition-property: all;
+
+  transition-duration: 300ms;
+  transition-property: all;
+
+  transition-timing-function: ease-out;
+}

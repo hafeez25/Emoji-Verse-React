@@ -11,7 +11,7 @@ const Header = () => {
         </h1>
       </div>
 
-      <div className=" rounded-md shadow-md  top flex gap-2 py-12 mx-auto">
+      <div className=" rounded-md  top flex gap-2 py-12 mx-auto">
         <div className="relative">
           <div className="absolute inset-y-0 left-2  pr-3 flex items-center">
             <svg

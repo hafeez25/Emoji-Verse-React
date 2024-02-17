@@ -53,13 +53,17 @@ const EmojiContextProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
   };
 
   const changeThemeHandler = () => {
-    if (contextValue.theme == "light") {
-      setTheme("dark");
-    } else {
+    console.log(Math.random());
+    const isTheme = localStorage.getItem("theme");
+    console.log(isTheme);
+
+    if (!isTheme) {
+      localStorage.setItem("theme", "light");
       setTheme("light");
+    } else {
+      setTheme(isTheme == "light" ? "dark" : "light");
+      localStorage.setItem("theme", theme);
     }
-    localStorage.setItem("theme", theme);
-    console.log(contextValue.theme);
   };
 
   const contextValue: EmojiContextObj = {
