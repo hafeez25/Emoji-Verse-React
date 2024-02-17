@@ -4,14 +4,16 @@ import { EmojisContext } from "../context/emoji-context";
 const Header = () => {
   const emojisCtx = useContext(EmojisContext);
   return (
-    <div className="flex flex-col items-center dark:bg-black">
-      <h1 className="font-medium  text-5xl  py-2  text-sky-600  flex-1   backdrop-blur-sm bg-white/30 dark:backdrop-blur-sm dark:bg-black/30   ">
-        Emoji-Verse👾
-      </h1>
+    <div className="mx-auto flex flex-col justify-end items-end">
+      <div className="dark:bg-black mx-auto bg-white">
+        <h1 className="font-medium  text-5xl  py-2  text-sky-600  backdrop-blur-sm bg-white/30 dark:backdrop-blur-sm dark:bg-black/30   ">
+          Emoji-Verse 👾
+        </h1>
+      </div>
 
-      <div className=" rounded-md shadow-md mt-5 flex gap-2">
+      <div className=" rounded-md shadow-md  top flex gap-2 py-12 mx-auto">
         <div className="relative">
-          <div className="absolute inset-y-0 left-2 -top-10 pr-3 flex items-center">
+          <div className="absolute inset-y-0 left-2  pr-3 flex items-center">
             <svg
               className="h-5 w-5 text-gray-400"
               fill="currentColor"
