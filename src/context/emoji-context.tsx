@@ -3,6 +3,7 @@ import * as data from "emoji-api";
 
 type EmojiContextObj = {
   emojis: data.Emoji[];
+  categories: string[];
   searchEmoji: (keyword: string) => void;
   filterCategory: (category: string) => void;
   theme: string;
@@ -11,20 +12,40 @@ type EmojiContextObj = {
 
 const EmojisContext = React.createContext<EmojiContextObj>({
   emojis: [],
+  categories: [],
   searchEmoji: (keyword: string) => {},
   filterCategory: (category: string) => {},
   theme: "light",
   changeTheme: () => {},
 });
 
+export { EmojisContext };
+
 const EmojiContextProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const [emojis, setEmojis] = useState<data.Emoji[]>(data.all());
   const searchEmojiHandler = (keyword: string) => {};
-  const filterCategoryHandler = (categroy: string) => {};
+  const filterCategoryHandler = (category: string) => {
+    window.scrollTo({
+      top: 200,
+      behavior: "smooth",
+    });
+
+    if (category === "all") {
+      setEmojis(data.all());
+      return;
+    }
+
+    const filterEmojis: data.Emoji[] = data.arrange().Symbols;
+
+    setEmojis(filterEmojis);
+    console.log(category);
+  };
+
   const changeThemeHandler = () => {};
 
   const contextValue: EmojiContextObj = {
     emojis: emojis,
+    categories: Object.keys(data.arrange()),
     searchEmoji: searchEmojiHandler,
     filterCategory: filterCategoryHandler,
     theme: "light",
@@ -36,3 +57,4 @@ const EmojiContextProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
     </EmojisContext.Provider>
   );
 };
+export default EmojiContextProvider;

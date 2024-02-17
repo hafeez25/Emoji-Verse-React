@@ -1,15 +1,14 @@
 import { NavLink } from "react-router-dom";
-import * as data from "emoji-api";
-import { useState } from "react";
-const categories = Object.keys(data.arrange());
+import { useContext, useState } from "react";
+import { EmojisContext } from "../context/emoji-context";
 
 const Navigation = () => {
-  const [emojis, setEmojis] = useState<data.Emoji[]>(data.all());
+  const emojiCtx = useContext(EmojisContext);
   return (
     <nav className=" bg-white flex flex-wrap justify-center py-3  sticky top-0 backdrop-blur-sm bg-white/30  dark:backdrop-blur-sm dark:bg-black/30   ">
       <li
         className=" font-medium   rounded-lg  list-none capitalize my-1 "
-        // onClick={() => changeCategory("all")}
+        onClick={() => emojiCtx.filterCategory("all")}
       >
         <NavLink
           to="/all"
@@ -24,11 +23,11 @@ const Navigation = () => {
         </NavLink>
       </li>
 
-      {categories.map((category) => {
+      {emojiCtx.categories.map((category) => {
         return (
           <li
             className="  font-medium   rounded-lg  list-none capitalize my-1 "
-            // onClick={() => changeCategory(category)}
+            onClick={() => emojiCtx.filterCategory(category)}
           >
             <NavLink
               to={`/${category.replace(" & ", "-").toLowerCase()}`}
