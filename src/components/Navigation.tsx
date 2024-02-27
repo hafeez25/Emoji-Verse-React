@@ -14,8 +14,8 @@ const Navigation = () => {
           to="/all"
           className={(navData) =>
             navData.isActive
-              ? "bg-slate-100 text-slate-900 px-3 py-2 rounded-lg dark:bg-slate-900 dark:text-white"
-              : "px-3 py-2  dark:text-white dark:hover:bg-slate-900 dark:hover:text-white text-slate-700 hover:rounded-lg  hover:bg-slate-100 hover:text-slate-900"
+              ? "bg-slate-200 text-slate-900 px-3 py-2 rounded-lg dark:bg-slate-900 dark:text-white"
+              : "px-3 py-2  dark:text-white dark:hover:bg-slate-900 dark:hover:text-white text-slate-700 hover:rounded-lg  hover:bg-slate-200 hover:text-slate-900"
           }
           key={"All"}
         >
@@ -33,8 +33,8 @@ const Navigation = () => {
               to={`/${category.replace(" & ", "-").toLowerCase()}`}
               className={(navData) =>
                 navData.isActive
-                  ? "bg-slate-100 text-slate-900 px-3 py-2 rounded-lg dark:bg-slate-900 dark:text-white"
-                  : "px-3 py-2  dark:text-white dark:hover:bg-slate-900 dark:hover:text-white text-slate-700 hover:rounded-lg  hover:bg-slate-100 hover:text-slate-900"
+                  ? "bg-slate-200 text-slate-900 px-3 py-2 rounded-lg dark:bg-slate-900 dark:text-white"
+                  : "px-3 py-2  dark:text-white dark:hover:bg-slate-900 dark:hover:text-white text-slate-700 hover:rounded-lg  hover:bg-slate-200 hover:text-slate-900"
               }
               //   key={category : data.Emoji}
             >
