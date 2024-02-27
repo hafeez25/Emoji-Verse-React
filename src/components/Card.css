@@ -71,10 +71,22 @@
 }
 
 .btn-icon:hover {
-  color: #007bff; /* Blue */
+  color: #007bff;
 }
 
 .card-buttons {
   display: flex;
   justify-content: center;
+}
+
+.pinned {
+  order: -1;
+}
+
+.btn-icon:hover {
+  color: #007bff;
+}
+
+.pinned-icon {
+  color: #ff0000;
 }
