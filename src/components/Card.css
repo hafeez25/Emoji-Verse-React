@@ -61,3 +61,20 @@
 
   transition-timing-function: ease-out;
 }
+
+.btn-icon {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-icon:hover {
+  color: #007bff; /* Blue */
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+}
