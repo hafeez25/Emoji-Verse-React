@@ -5,7 +5,7 @@ const Header = () => {
   const emojisCtx = useContext(EmojisContext);
   return (
     <div className="mx-auto flex flex-col justify-end items-end">
-      <div className="dark:bg-black mx-auto bg-white">
+      <div className="dark:bg-black mx-auto bg-slate-50">
         <h1 className="font-medium  text-5xl  py-2  text-sky-600  backdrop-blur-sm bg-white/30 dark:backdrop-blur-sm dark:bg-black/30   ">
           Emoji-Verse 👾
         </h1>

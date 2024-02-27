@@ -46,10 +46,16 @@ const EmojiContextProvider: React.FC<React.PropsWithChildren<{}>> = (props) => {
       return;
     }
 
-    const filterEmojis: data.Emoji[] = data.arrange().Symbols;
+    const emojiData: Record<data.EmojiGroup, data.Emoji[]> = data.arrange();
 
-    setEmojis(filterEmojis);
-    console.log(category);
+    if ((category as keyof typeof emojiData) in emojiData) {
+      const filterEmojis: data.Emoji[] = emojiData[category as data.EmojiGroup];
+      setEmojis(filterEmojis);
+      console.log(category);
+    } else {
+      // Handle the case where the category is not found
+      console.error(`Category "${category}" not found`);
+    }
   };
 
   const changeThemeHandler = () => {

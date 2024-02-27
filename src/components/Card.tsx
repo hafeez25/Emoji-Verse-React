@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as data from "emoji-api";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy, faShare, faHeadphones, faThumbtack, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faShare, faHeadphones, faThumbtack, faDownload } from "@fortawesome/free-solid-svg-icons";
 import "./Card.css";
 
 const Card: React.FC<{
@@ -23,13 +23,14 @@ const Card: React.FC<{
 
   const shareEmoji = () => {
     const shareText = `Check out this emoji: ${props.data.emoji}`;
-    navigator.share({
-      title: "Emoji Share",
-      text: shareText,
-      url: window.location.href
-    })
-    .then(() => console.log("Shared successfully"))
-    .catch((error) => console.error("Error sharing:", error));
+    navigator
+      .share({
+        title: "Emoji Share",
+        text: shareText,
+        url: window.location.href,
+      })
+      .then(() => console.log("Shared successfully"))
+      .catch((error) => console.error("Error sharing:", error));
   };
 
 
@@ -89,6 +90,8 @@ const Card: React.FC<{
         {props.data.emoji}
       </span>
       <span className="text-xl capitalize pt-3">{props.data.name}</span>
+
+      {/* Hidden by default, visible on hover */}
       <div className="flex gap-4 pt-3">
         <button className="btn-icon" onClick={copyToClipboard}>
           <FontAwesomeIcon icon={faCopy} />
