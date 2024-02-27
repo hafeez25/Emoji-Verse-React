@@ -12,7 +12,7 @@ const Home = () => {
       className={`  min-w-full min-h-screen mx-auto	 ${
         emojisCtx.theme
       } m-auto dark:bg-black  ${
-        emojisCtx.theme === "dark" ? "bg-black" : "bg-white"
+        emojisCtx.theme === "dark" ? "bg-black" : "bg-slate-50"
       }`}
     >
       <Header />
